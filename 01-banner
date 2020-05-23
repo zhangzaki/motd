@@ -12,6 +12,6 @@ echo -e " ${YEL}Disk Usages.........:${NC} ${PUR}$(df -h | awk '{if($(NF) == "/"
 echo -e " ${YEL}Available Updates...:${NC} There are ${NC}${PUR}$(/usr/lib/update-notifier/apt-check 2>&1 | cut -d ';' -f 1)${NC} security updates and ${PUR}$(/usr/lib/update-notifier/apt-check 2>&1 | cut -d ';' -f 2)${NC}" regular updates 
 #echo -e " ${YEL}Available Updates...:${NC} There are ${NC}${PUR}$(yum check-update --quiet | grep -v "^$" | wc -l)${NC} updates 
 echo -e " ${YEL}Memory..............:${NC} Used: ${PUR}$(free -m | grep Mem: | xargs | cut -f3 -d' ')${NC} MB | Free: ${PUR}$(free -m | grep Mem: | xargs | cut -f7 -d' ')${NC} MB | Total: ${PUR}$(free -m | grep Mem: | xargs | cut -f2 -d' ')${NC} MB"
-echo -e " ${YEL}Network.............:${NC} Interface${NC}${PUR}$(ip -4 ad | grep 'state UP' | awk -F ":" '!/^[0-9]*: ?do/ {print $2}')${NC} is active with ip adres ${PUR}$(hostname -I | awk '{print $1}')${NC}"
+echo -e " ${YEL}Network.............:${NC} Interface${NC}${PUR}$(ip -4 ad | grep 'state UP' | awk -F ":" '!/^[0-9]*: ?do/ {print $2}')${NC} is active with ip address ${PUR}$(hostname -I | awk '{print $1}')${NC}"
 echo -e " ${YEL}SSH Logins..........:${NC} There are currently ${PUR}$(who | wc -l)${NC} users logged in"
 echo -e " ${YEL}Processes...........:${NC} There are currently ${PUR}$(ps -ef | wc -l)${NC} processes running"
