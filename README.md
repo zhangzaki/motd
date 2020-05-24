@@ -1,6 +1,14 @@
 # motd
 Linux MOTD
 
-Comment in the 01-banner out if you want apt or yum (untested) updates showed.
+Simple linux MOTD to show system information. Works with Ubuntu and Centos. 
 
-install simple by placing the files /etc/update-motd.d and remove all the other files in the folde (Ubuntu)
+Install Ubuntu:
+- Clone the repro to folder
+- Copy or move file on_login_ubuntu to /etc/update-motd.d
+- make the file execuable; chmod +x on_login_ubuntu
+
+Install Centos:
+- Clone the repro to folder
+- Copy or move file on_login_centos to /etc/profile.d/
+- make the file execuable; chmod +x on_login_centos
